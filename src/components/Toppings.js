@@ -20,7 +20,14 @@ const Toppings = ({ addTopping, pizza }) => {
       transition: { type: "spring", delay: 0.2, stiffness: 20 },
     },
   };
-
+  const buttonVariant = {
+    hover: {
+      scale: 1.1,
+      textShadow: "0px 0px 10px rgb(200,200,200)",
+      boxShadow: "0px 0px 10px rgb(255,255,200)",
+      transition: { yoyo: Infinity, duration: 0.3 },
+    },
+  };
   return (
     <motion.div
       className="toppings container"
@@ -46,13 +53,7 @@ const Toppings = ({ addTopping, pizza }) => {
       </ul>
 
       <Link to="/order">
-        <motion.button
-          whileHover={{
-            scale: 1.1,
-            textShadow: "0px 0px 10px rgb(200,200,200)",
-            boxShadow: "0px 0px 10px rgb(255,255,200)",
-          }}
-        >
+        <motion.button variants={buttonVariant} whileHover="hover">
           Order
         </motion.button>
       </Link>
