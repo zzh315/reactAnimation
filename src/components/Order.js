@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Order = ({ pizza }) => {
-  const [showTitle, setShowTitle] = useState(true);
+  // const [showTitle, setShowTitle] = useState(true);
 
-  setTimeout(() => {
-    console.log("here we go again");
-    setShowTitle(false);
-  }, 4000);
+  // setTimeout(() => {
+  //   console.log("here we go again");
+  //   setShowTitle(false);
+  // }, 4000);
 
   const containerVariant = {
     hidden: { opacity: 0, x: "100vw" },
@@ -22,6 +22,7 @@ const Order = ({ pizza }) => {
         staggerChildren: 0.4,
       },
     },
+    exit: { x: "-100vw", transition: { ease: "easeInOut" } },
   };
 
   const childrenVariant = {
@@ -35,12 +36,10 @@ const Order = ({ pizza }) => {
       variants={containerVariant}
       initial="hidden"
       animate="visible"
+      exit="exit"
     >
-      <AnimatePresence>
-        {showTitle && (
-          <motion.h2 exit={{ y: -1000 }}>Thank you for your order :)</motion.h2>
-        )}
-      </AnimatePresence>
+      <h2>Thank you for your order :)</h2>
+
       <motion.p variants={childrenVariant}>
         You ordered a {pizza.base} pizza with:
       </motion.p>

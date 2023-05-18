@@ -19,6 +19,7 @@ const Toppings = ({ addTopping, pizza }) => {
       x: 0,
       transition: { type: "spring", delay: 0.2, stiffness: 20 },
     },
+    exit: { x: "-100vw", transition: { ease: "easeInOut" } },
   };
   const buttonVariant = {
     hover: {
@@ -34,6 +35,7 @@ const Toppings = ({ addTopping, pizza }) => {
       variants={containerVariant}
       initial="hidden"
       animate="visible"
+      exit="exit"
     >
       <h3>Step 2: Choose Toppings</h3>
       <ul>
