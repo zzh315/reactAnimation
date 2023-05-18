@@ -37,7 +37,7 @@ const Loader = () => {
         variants={loaderVariants}
         animate={animation}
       ></motion.div>
-      <button onClick={() => cycleAnimation()}>toggleloader</button>
+      <p onClick={() => cycleAnimation()}>toggleloader</p>
     </>
   );
 };
