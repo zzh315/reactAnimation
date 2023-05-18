@@ -17,7 +17,7 @@ const Base = ({ addBase, pizza }) => {
 
   const nextVariant = {
     hidden: { x: "-100vw" },
-    visible: { x: 0, transition: { type: "spring", stiffness: 80 } },
+    visible: { x: 0, transition: { type: "spring", stiffness: 30 } },
   };
 
   const buttonVariant = {
@@ -45,7 +45,7 @@ const Base = ({ addBase, pizza }) => {
               key={base}
               onClick={() => addBase(base)}
               whileHover={{ scale: 1.3, originX: 0, color: "#f8e112" }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ type: "spring", stiffness: 60 }}
             >
               <span className={spanClass}>{base}</span>
             </motion.li>

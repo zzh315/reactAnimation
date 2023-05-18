@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
-const Order = ({ pizza }) => {
+const Order = ({ pizza, setShowModal }) => {
   // const [showTitle, setShowTitle] = useState(true);
 
   // setTimeout(() => {
   //   console.log("here we go again");
   //   setShowTitle(false);
   // }, 4000);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowModal(true);
+    }, 4000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   const containerVariant = {
     hidden: { opacity: 0, x: "100vw" },
